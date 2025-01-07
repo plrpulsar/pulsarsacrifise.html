@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulsar Sacrifice</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Pulsar Sacrifice</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Cuenta Regresiva</h2>
+            <div id="countdown" class="countdown">Cargando...</div>
+        </section>
+        <section>
+            <h2>Conectar Wallet</h2>
+            <button id="connectWallet">Conectar Wallet</button>
+        </section>
+        <section>
+            <h2>Hacer Sacrificio</h2>
+            <select id="tokenSelect">
+                <option value="0xA1077a294dDE1B09bB078844df40758a5D0f9a27">WPLS</option>
+                <option value="0x95B303987A60C71504D99Aa1b13B4DA07b0790ab">PLSX</option>
+                <option value="0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39">HEX</option>
+                <option value="0x2fa878Ab3F87CC1C9737Fc071108F904c0B0C95d">INC</option>
+                <option value="0x02DcdD04e3F455D838cd1249292C58f3B79e3C3C">WETH</option>
+                <option value="0xefD766cCb38EaF1dfd701853BFCe31359239F305">DAI</option>
+                <option value="0x0Cb6F5a34ad42ec934882A05265A7d5F59b51A2f">USDT</option>
+            </select>
+            <input type="number" id="sacrificeAmount" placeholder="Cantidad a sacrificar">
+            <button id="sacrificeButton">Hacer Sacrificio</button>
+        </section>
+        <section>
+            <h2>Registro de Sacrificios</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dirección</th>
+                        <th>Moneda</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody id="sacrificeLog"></tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Reclamar PLR</h2>
+            <button id="claimTokens">Reclamar PLR</button>
+        </section>
+        <section>
+            <h2>Retirar Tokens del Sacrificio</h2>
+            <button id="withdrawSacrificedTokens">Retirar Tokens</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Pulsar Sacrifice</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
