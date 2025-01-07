@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Exo 2', sans-serif;
-    background: linear-gradient(135deg, #ff0080, #8000ff);
+    background: radial-gradient(circle, #000000, #1c1c1c);
     color: #ffffff;
     text-align: center;
     min-height: 100vh;
@@ -12,87 +12,141 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: background 0.5s ease;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 header {
     width: 100%;
     padding: 20px;
-    background: linear-gradient(90deg, #ff4dff, #cc00cc);
+    background: linear-gradient(90deg, #5c0066, #e50099);
     text-align: center;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px #ff0088, 0 0 30px #ff0088, 0 0 40px #ff0088;
+    }
+    100% {
+        box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+    }
 }
 
 header h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     color: white;
     margin: 0;
     font-weight: bold;
-    text-shadow: 0px 0px 10px #ff00ff, 0px 0px 20px #ff4dff;
-    transition: transform 0.3s ease;
-}
-
-header:hover h1 {
-    transform: translateY(-10px);
+    text-shadow: 0px 0px 10px #ff00ff, 0px 0px 20px #5c0066;
 }
 
 section {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 25px;
-    border-radius: 15px;
-    margin: 15px 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 10px 0;
     width: 90%;
-    max-width: 600px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease, background 0.3s ease;
+    max-width: 500px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    animation: pulse 1.5s infinite alternate;
 }
 
-section:hover {
-    transform: scale(1.05);
-    background: rgba(0, 0, 0, 0.8);
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
 }
 
 section h2 {
-    font-size: 1.8rem;
-    color: #ff4dff;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
-}
-
-section:hover h2 {
-    color: #ff00cc;
+    font-size: 1.5rem;
+    color: #ff00ff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 input, select, button {
     width: 100%;
     padding: 12px;
-    margin: 12px 0;
+    margin: 10px 0;
     border: none;
-    border-radius: 10px;
+    border-radius: 6px;
     font-size: 1.1rem;
+    background-color: #2a0047;
+    color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
     transition: all 0.3s ease;
 }
 
-input, select {
-    background: #1a0033;
-    color: white;
-    border: 1px solid #ff00cc;
-}
-
-input:focus, select:focus {
-    border-color: #ff4dff;
-    background: #33004d;
+input:focus, select:focus, button:focus {
+    outline: none;
+    box-shadow: 0px 0px 15px #ff00ff;
 }
 
 button {
-    background: linear-gradient(90deg, #ff4dff, #ff0080);
+    background: linear-gradient(90deg, #ff4dc4, #7200ca);
     color: white;
     font-weight: bold;
     cursor: pointer;
-    border: 1px solid #ff4dff;
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 button:hover {
-    
+    transform: scale(1.1);
+}
+
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+footer {
+    padding: 20px;
+    background: #1a0033;
+    color: white;
+    margin-top: auto;
+}
+
+.countdown {
+    font-size: 2rem;
+    color: #ff7dff;
+    font-weight: bold;
+    margin: 20px 0;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #370075;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background: #5c0066;
+    color: white;
+}
+
+table td {
+    background: rgba(0, 0, 0, 0.6);
+    color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    section h2 {
+        font-size: 1.2rem;
+    }
+}
