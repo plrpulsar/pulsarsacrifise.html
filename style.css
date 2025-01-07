@@ -1,98 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
-
 body {
     margin: 0;
     padding: 0;
     font-family: 'Exo 2', sans-serif;
-    background: linear-gradient(135deg, #ff0080, #8000ff);
-    color: #ffffff;
+    background: #000000; /* Fondo negro */
+    color: #e0e0e0;
     text-align: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: background 0.5s ease;
 }
 
 header {
     width: 100%;
     padding: 20px;
-    background: linear-gradient(90deg, #ff4dff, #cc00cc);
+    background: linear-gradient(90deg, #ff4dc4, #7200ca); /* Fondo con gradiente fuerte */
     text-align: center;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: white;
     margin: 0;
     font-weight: bold;
-    text-shadow: 0px 0px 10px #ff00ff, 0px 0px 20px #ff4dff;
-    transition: transform 0.3s ease;
-}
-
-header:hover h1 {
-    transform: translateY(-10px);
+    text-shadow: 0px 0px 10px #ff00ff, 0px 0px 20px #ff4dc4; /* Efecto de texto llamativo */
 }
 
 section {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 25px;
-    border-radius: 15px;
-    margin: 15px 0;
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-section:hover {
-    transform: scale(1.05);
-    background: rgba(0, 0, 0, 0.8);
-}
-
-section h2 {
-    font-size: 1.8rem;
-    color: #ff4dff;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
-}
-
-section:hover h2 {
-    color: #ff00cc;
-}
-
-input, select, button {
-    width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-    border: none;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    padding: 20px;
     border-radius: 10px;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-}
-
-input, select {
-    background: #1a0033;
-    color: white;
-    border: 1px solid #ff00cc;
-}
-
-input:focus, select:focus {
-    border-color: #ff4dff;
-    background: #33004d;
+    margin: 10px 0;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 button {
-    background: linear-gradient(90deg, #ff4dff, #ff0080);
+    background: linear-gradient(90deg, #ff4dc4, #7200ca);
     color: white;
     font-weight: bold;
     cursor: pointer;
-    border: 1px solid #ff4dff;
-    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 5px;
+    padding: 15px;
+    border: none;
+    transition: background 0.3s ease;
 }
 
 button:hover {
-    
+    background: linear-gradient(90deg, #ff7dff, #ff4dc4);
+}
+
+footer {
+    padding: 20px;
+    background: #1a0033;
+    color: white;
+    margin-top: auto;
+}
+
