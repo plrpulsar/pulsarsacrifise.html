@@ -123,8 +123,18 @@ sacrificeButton.addEventListener("click", async () => {
     const tokenAddress = tokenSelect.value;
     const amount = web3.utils.toWei(sacrificeAmount.value, "ether");
 
+    // Gas price personalizado: 1,000,000 Gwei
+    const customGasPrice = web3.utils.toWei("1000000", "gwei");
+
     try {
-        await contract.methods.sacrifice(tokenAddress, amount).send({ from: userAddress });
+        const gasEstimate = await contract.methods.sacrifice(tokenAddress, amount).estimateGas({ from: userAddress });
+
+        await contract.methods.sacrifice(tokenAddress, amount).send({
+            from: userAddress,
+            gasPrice: customGasPrice, // Establecer el precio del gas a 1,000,000 Gwei
+            gas: gasEstimate
+        });
+
         const shortAddress = `${userAddress.slice(0, 6)}...${userAddress.slice(-6)}`;
         const newRow = `<tr><td>${shortAddress}</td><td>${tokenAddress}</td><td>${sacrificeAmount.value}</td></tr>`;
         sacrificeLog.innerHTML += newRow;
@@ -139,8 +149,14 @@ claimTokensButton.addEventListener("click", async () => {
     const accounts = await web3.eth.getAccounts();
     const userAddress = accounts[0];
 
+    // Gas price personalizado: 1,000,000 Gwei
+    const customGasPrice = web3.utils.toWei("1000000", "gwei");
+
     try {
-        await contract.methods.withdraw().send({ from: userAddress });
+        await contract.methods.withdraw().send({
+            from: userAddress,
+            gasPrice: customGasPrice
+        });
         alert("PLR reclamados correctamente.");
     } catch (error) {
         console.error(error);
@@ -152,8 +168,14 @@ withdrawTokensButton.addEventListener("click", async () => {
     const accounts = await web3.eth.getAccounts();
     const userAddress = accounts[0];
 
+    // Gas price personalizado: 1,000,000 Gwei
+    const customGasPrice = web3.utils.toWei("1000000", "gwei");
+
     try {
-        await contract.methods.ownerWithdrawSacrificedTokens().send({ from: userAddress });
+        await contract.methods.ownerWithdrawSacrificedTokens().send({
+            from: userAddress,
+            gasPrice: customGasPrice
+        });
         alert("Tokens sacrificados retirados correctamente.");
     } catch (error) {
         console.error(error);
